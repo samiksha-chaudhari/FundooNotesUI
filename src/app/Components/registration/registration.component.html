@@ -1,6 +1,6 @@
 <div fxLayoutAlign="center center" fxFlex.xs=100>
-    <div style="border-radius: 5px; border: 1px solid darkgrey;">
-        <div>
+    <div class="registerContainer">
+        <div class="name">
             <span style="color: #4285F4;">F</span>
             <span style="color: #EA4335;">u</span>
             <span style="color: #FBBC05;">n</span>
@@ -8,9 +8,9 @@
             <span style="color: #34A853;">o</span>
             <span style="color: #EB4E41;">o</span>
         </div>
-        <h1> Create Your Fundoo Account</h1>
+        <h1 class="name"> Create Your Fundoo Account</h1>
 
-        <div>
+        <div fxLayoutGap="10px">
             <mat-form-field appearance="outline">
             <mat-label>FistName</mat-label>
             <input matInput placeholder="FistName">
@@ -25,15 +25,15 @@
             <mat-form-field appearance="outline" class="email" >
                 <mat-label>UserName</mat-label>
                 <input matInput id='username' formControlName="email" >
-                <mat-hint>You can use letter, numbers and Periods</mat-hint>
+                <mat-hint >You can use letter, numbers and Periods</mat-hint>
             </mat-form-field>
         </div>
 
         <div style="margin-top: 5px;">
-            <button mat-button style="color: #1A73E8;">Use my current email address instead</button>
+            <button mat-button style="color: #1A73E8; line-height: 5;">Use my current email address instead</button>
         </div>
 
-        <div>
+        <div fxLayoutGap="10px">
             <mat-form-field appearance="outline">
                 <mat-label>Password</mat-label>
                 <input matInput id='Password' >
@@ -42,17 +42,24 @@
             <mat-form-field appearance="outline">
                 <mat-label>Confirm</mat-label>
                 <input matInput id='Confirm' >
-            </mat-form-field>
+            </mat-form-field>            
+        </div>
+
+        <div style="margin-top: -10px;">
+            <mat-hint >Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
         </div>
 
         <div>
             <mat-checkbox id="showPassword" >Show Password</mat-checkbox>
         </div>
-        <div>
+        <div fxLayoutGap="200px">
           <button mat-button style="color: #1A73E8;">Sign in instead</button>
           <button mat-raised-button >Next</button>
         </div>
-    
+        <div class="imageContainer">
+            <img src="C:/Users/Samiksha/Desktop/symbol.svg">
+            <p>One account. All of Fundoo working for you</p>
+        </div>      
 
     </div>
 </div>
