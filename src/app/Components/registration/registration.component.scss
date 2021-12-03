@@ -1,4 +1,6 @@
-.registerContainer{    
+.registerContainer{  
+    margin-top: 30px;  
+    margin-bottom: 30px;
     border-radius: 5px;
     border: 1px solid darkgrey; 
     padding: 3%;    
@@ -8,10 +10,22 @@
     font-family: 'Google Sans','Noto Sans Myanmar UI',arial,sans-serif;
     font-size: 25px;
     font-weight: 500;
-    line-height: 2;
+    margin-top: 15px;
+    margin-bottom: 30px;
 }
 
+.sign{
+    margin-top: 50px;
+}
 .imageContainer{
+    margin-left: 450px;
+    margin-top: -420px;
+    margin-bottom: 180px;
     height: 250px;
     width: 250px;
+}
+.text{
+    font-size: 17px;
+    text-align: center;
+    color: black;
 }
