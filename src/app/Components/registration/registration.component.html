@@ -9,54 +9,56 @@
             <span style="color: #EB4E41;">o</span>
         </div>
         <h1 class="name"> Create Your Fundoo Account</h1>
+        <form >
 
-        <div fxLayoutGap="10px">
-            <mat-form-field appearance="outline">
-            <mat-label>FistName</mat-label>
-            <input matInput placeholder="FistName">
-            </mat-form-field>
-    
-            <mat-form-field appearance="outline">
-            <mat-label>LastName</mat-label>
-            <input matInput placeholder="LastName">
-            </mat-form-field>
-        </div>
-        <div>
-            <mat-form-field appearance="outline" class="email" style="width: 59%;" >
-                <mat-label>UserName</mat-label>
-                <input matInput id='username' formControlName="email" >
-                <mat-hint >You can use letter, numbers and Periods</mat-hint>
-            </mat-form-field>
-        </div>
+            <div fxLayoutGap="10px">
+                <mat-form-field appearance="outline">
+                <mat-label>FistName</mat-label>
+                <input matInput placeholder="FistName">
+                </mat-form-field>
+            
+        
+                <mat-form-field appearance="outline">
+                <mat-label>LastName</mat-label>
+                <input matInput placeholder="LastName">
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="outline" class="email" style="width: 58%;" >
+                    <mat-label>UserName</mat-label>
+                    <input matInput id='username' formControlName="email" >
+                    <mat-hint >You can use letter, numbers and Periods</mat-hint>
+                </mat-form-field>
+            </div>
 
-        <div style="margin-top: 10px; margin-bottom: 25px; margin-left: -10px;">
-            <button mat-button style="color: #1A73E8;">Use my current email address instead</button>
-        </div>
+            <div style="margin-top: 10px; margin-bottom: 25px; margin-left: -10px;">
+                <button mat-button style="color: #1A73E8;">Use my current email address instead</button>
+            </div>
 
-        <div fxLayoutGap="10px">
-            <mat-form-field appearance="outline">
-                <mat-label>Password</mat-label>
-                <input matInput id='Password' >
-            </mat-form-field>
+            <div fxLayoutGap="10px">
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput id='Password' >
+                </mat-form-field>
 
-            <mat-form-field appearance="outline">
-                <mat-label>Confirm</mat-label>
-                <input matInput id='Confirm' >
-            </mat-form-field>            
-        </div>
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm</mat-label>
+                    <input matInput id='Confirm' >
+                </mat-form-field>            
+            </div>
 
-        <div style="margin-top: -10px;">
-            <mat-hint >Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
-        </div>
+            <div style="margin-top: -10px;">
+                <mat-hint >Use 8 or more characters with a mix of letters, numbers & symbols</mat-hint>
+            </div>
 
-        <div>
-            <mat-checkbox id="showPassword" >Show Password</mat-checkbox>
-        </div>
-        <div class="sign" fxLayoutGap="200px">
-          <button mat-button style="color: #1A73E8;">Sign in instead</button>
-          <button mat-raised-button style="background-color: #1A73E8; color:white"  >Next</button>
-        </div>
-
+            <div>
+                <mat-checkbox id="showPassword" >Show Password</mat-checkbox>
+            </div>
+            <div class="sign" fxLayoutGap="200px">
+            <button mat-button style="color: #1A73E8;">Sign in instead</button>
+            <button mat-raised-button style="background-color: #1A73E8; color:white" >Next</button>
+            </div>
+        </form>
         <div class="imageContainer" fxLayout="column" fxLayoutAlign="center center">
             <img src="../../../assets/symbol.svg">
             <p class="text">One account. All of Fundoo working for you</p>
