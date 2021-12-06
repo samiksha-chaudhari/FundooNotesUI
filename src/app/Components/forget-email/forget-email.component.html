@@ -1,5 +1,5 @@
 <div fxLayoutAlign="center center" fxFlex.xs=100>
-    <div class="Container">
+    <div class="Container" fxFlex.xs=80>
         <div class="name" fxLayoutAlign="center center">
             <span style="color: #4285F4;">F</span>
             <span style="color: #EA4335;">u</span>
@@ -15,18 +15,20 @@
         <div fxLayoutAlign="center center">
             <h3> Enter your phone number or recovery email</h3>
         </div>
-        
+        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
 
-        <div fxLayoutAlign="center center" fxFlex.xs=100>
-            <mat-form-field appearance="outline">
-                <mat-label>Phone number or email</mat-label>
-                <input matInput placeholder="Phone number or email">
-            </mat-form-field>
-        </div>
-
-        <div style="margin-top: 20px;">
-            <button mat-raised-button class="submit">Submit</button>
-        </div>          
+            <div fxLayoutAlign="center center" fxFlex.xs=100>
+                <mat-form-field appearance="outline" style="width: 90%;">
+                    <mat-label>Phone number or email </mat-label>
+                    <input matInput placeholder="Phone number or email" formControlName="email">
+                    <mat-error>Enter Phone number or email</mat-error>
+                </mat-form-field>
+            </div>
+            
+            <div style="margin-top: 20px;">
+                <button mat-raised-button class="submit" type="submit" (click)="onSubmit()">Submit</button>
+            </div> 
+        </form>         
 
     </div>
 </div>

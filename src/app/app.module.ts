@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -15,6 +14,9 @@ import {MatButtonModule} from '@angular/material/button';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ForgetPasswordComponent } from './Components/forget-password/forget-password.component';
 import { ForgetEmailComponent } from './Components/forget-email/forget-email.component';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './Components/dashboard/dashboard.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { ForgetEmailComponent } from './Components/forget-email/forget-email.com
     RegistrationComponent,
     LoginComponent,
     ForgetPasswordComponent,
-    ForgetEmailComponent
+    ForgetEmailComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +36,7 @@ import { ForgetEmailComponent } from './Components/forget-email/forget-email.com
     MatIconModule,
     FlexLayoutModule,
     MatCheckboxModule,
-    MatButtonModule,FormsModule,ReactiveFormsModule
+    MatButtonModule,FormsModule,ReactiveFormsModule,MatSnackBarModule,HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

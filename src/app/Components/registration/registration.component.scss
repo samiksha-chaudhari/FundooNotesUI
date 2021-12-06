@@ -1,3 +1,10 @@
+@media screen and (max-width:1000) {
+    .registerContainer{
+        padding :5px;
+    }
+    
+}
+
 .registerContainer{  
     margin-top: 30px;  
     margin-bottom: 30px;
@@ -28,4 +35,10 @@
     font-size: 17px;
     text-align: center;
     color: black;
+}
+@media only screen and (max-width: 599px) {
+    .registerContainer{
+        border: none;
+    }
+
 }
