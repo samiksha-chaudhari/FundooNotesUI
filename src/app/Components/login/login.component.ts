@@ -11,6 +11,7 @@ import { UserService } from 'src/app/Services/userService/user.service';
 export class LoginComponent implements OnInit {
   loginForm !: FormGroup;
   submitted = false;
+  hide: boolean | undefined;
 
   constructor(private formBuilder: FormBuilder, private user:UserService, private snackBar:MatSnackBar) { }
 
@@ -26,10 +27,13 @@ export class LoginComponent implements OnInit {
   // convenience getter for easy access to form fields
   get f() { return this.loginForm.controls; }
 
+  showpassword()
+{ this.hide = !this.hide}
+
   onSubmit() {
     this.submitted = true;
 
-    // stop here if form is invalid
+    // stop here if form is valid
     if (this.loginForm.valid) {
       let payload={
         Email:this.loginForm.value.email,
@@ -57,3 +61,4 @@ export class LoginComponent implements OnInit {
   }
 
 }
+

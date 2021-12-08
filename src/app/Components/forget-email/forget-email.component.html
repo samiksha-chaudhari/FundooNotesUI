@@ -10,12 +10,12 @@
         </div>
 
         <div fxLayoutAlign="center center">
-            <h1 class="name"> Find your email</h1>
+            <h1 class="name"> Forget Password</h1>
         </div>
         <div fxLayoutAlign="center center">
             <h3> Enter your phone number or recovery email</h3>
         </div>
-        <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <form [formGroup]="forgetForm" (ngSubmit)="onSubmit()">
 
             <div fxLayoutAlign="center center" fxFlex.xs=100>
                 <mat-form-field appearance="outline" style="width: 90%;">
@@ -26,7 +26,7 @@
             </div>
             
             <div style="margin-top: 20px;">
-                <button mat-raised-button class="submit" type="submit" (click)="onSubmit()">Submit</button>
+                <button mat-raised-button class="submit" type="submit">Submit</button>
             </div> 
         </form>         
 

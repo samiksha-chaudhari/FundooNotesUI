@@ -17,6 +17,11 @@ import { ForgetEmailComponent } from './Components/forget-email/forget-email.com
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardComponent } from './Components/dashboard/dashboard.component';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatMenuModule} from '@angular/material/menu';
+import {MatCardModule} from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -36,7 +41,16 @@ import { DashboardComponent } from './Components/dashboard/dashboard.component';
     MatIconModule,
     FlexLayoutModule,
     MatCheckboxModule,
-    MatButtonModule,FormsModule,ReactiveFormsModule,MatSnackBarModule,HttpClientModule
+    MatButtonModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MatSnackBarModule,
+    HttpClientModule,
+    MatSidenavModule,
+    MatToolbarModule,
+    MatListModule,
+    MatMenuModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]
