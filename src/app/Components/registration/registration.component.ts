@@ -33,10 +33,11 @@ export class RegistrationComponent implements OnInit {
     // stop here if form is invalid
     if (this.registerForm.valid) {
         let payload={
-          FirstName:this.registerForm.value.firstName,
-          LastName:this.registerForm.value.lastName,
-          Email:this.registerForm.value.email,
-          Password:this.registerForm.value.password,
+          firstName:this.registerForm.value.firstName,
+          lastName:this.registerForm.value.lastName,
+          email:this.registerForm.value.email,
+          password:this.registerForm.value.password,
+          confirmPassword:this.registerForm.value.confirmPassword,
           service:"advance"       
         }
         console.log(payload);
@@ -50,16 +51,11 @@ export class RegistrationComponent implements OnInit {
           (error)=>console.log(error)
 
         )
-
-
     }
     else{
       this.snackBar.open("registration failed"," ",{
         duration:1000
       });
-    }
-
-    
+    }    
   }
-
 }

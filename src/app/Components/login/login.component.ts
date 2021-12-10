@@ -9,6 +9,7 @@ import { UserService } from 'src/app/Services/userService/user.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent implements OnInit {
+  //user='1'
   loginForm !: FormGroup;
   submitted = false;
   hide: boolean | undefined;
@@ -16,6 +17,9 @@ export class LoginComponent implements OnInit {
   constructor(private formBuilder: FormBuilder, private user:UserService, private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {
+
+    //localStorage.setItem('token',this.user)
+
     this.loginForm = this.formBuilder.group({
       
       email: ['', [Validators.required, Validators.email]],
@@ -36,8 +40,8 @@ export class LoginComponent implements OnInit {
     // stop here if form is valid
     if (this.loginForm.valid) {
       let payload={
-        Email:this.loginForm.value.email,
-        Password:this.loginForm.value.password,
+        email:this.loginForm.value.email,
+        password:this.loginForm.value.password,
         service:"advance"       
       }
       console.log(payload);
@@ -52,6 +56,7 @@ export class LoginComponent implements OnInit {
 
       )
     }
+    
     else{
       this.snackBar.open("login failed"," ",{
         duration:1000

@@ -1,3 +1,4 @@
+import { HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpService } from '../httpService/http.service';
@@ -6,15 +7,23 @@ import { HttpService } from '../httpService/http.service';
   providedIn: 'root'
 })
 export class NotesServiceService {
-  baseUrl=environment.baseUrl;
-  token: string | null;
-  httpService: any;
+  baseUrl = environment.baseUrl;
+  token: any;
 
-  constructor(private http:HttpService) { 
-    this.token= localStorage.getItem("token")
+  constructor(private http: HttpService) {
+    this.token = localStorage.getItem("token")
   }
 
-  create(payload:any) {
-    return this.http.Post(this.baseUrl+"addnotes",payload)
+  create(payload: any) {
+    this.token = localStorage.getItem("token")
+
+    let header = {
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+        'Authorization': 'Bearer' + this.token
+      })
+    }
+    console.log(header);
+    return this.http.Post(this.baseUrl + "addnotes", payload, false, header)
   }
 }

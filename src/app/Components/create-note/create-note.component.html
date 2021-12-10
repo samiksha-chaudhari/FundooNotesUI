@@ -25,5 +25,17 @@
                 <textarea cdkTextareaAutosize placeholder="Take a note..." class="notedescription" formControlName="Description"></textarea>
             </mat-card-title>
         </div>
+        <div>
+            <mat-card-title >
+                <textarea cdkTextareaAutosize placeholder="userId" formControlName="userID"></textarea>
+            </mat-card-title>
+        </div>
+        <div fxLayout="row" fxLayoutAlign="space-between end"><div fxFlex="70">
+               <app-icon></app-icon>
+            </div>
+            <div>
+                <button mat-icon-button (click)="onClose();" style="opacity: 0.9;">Close</button>
+            </div>
+         </div>
     </mat-card>
 </div>

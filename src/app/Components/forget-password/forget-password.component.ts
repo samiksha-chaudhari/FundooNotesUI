@@ -17,7 +17,6 @@ export class ForgetPasswordComponent implements OnInit {
 
   ngOnInit(): void {
     this.resetForm = this.formBuilder.group({
-      email:['',[Validators.required,Validators.email]],
       password: ['', [Validators.required, Validators.minLength(6)]],
       confirmPassword: ['', Validators.required]
     })
@@ -33,9 +32,7 @@ export class ForgetPasswordComponent implements OnInit {
     // stop here if form is invalid
     if (this.resetForm.valid) {
       let payload={
-        Email:this.resetForm.value.email,
-        NewPassword:this.resetForm.value.password,
-        ConfirmPassword:this.resetForm.value.confirmPassword       
+        newPassword:this.resetForm.value.password 
       }
       console.log(payload);
       this.user.reset(payload,token).subscribe(
