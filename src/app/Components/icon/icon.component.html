@@ -1,0 +1,42 @@
+<div class="footericons">
+    <div class="icon">
+        <button mat-icon-button>
+            <mat-icon mat-list-icon>add_alert</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon mat-list-icon>person_add</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon mat-list-icon>color_lens</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon mat-list-icon>image</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon mat-list-icon>archive</mat-icon>
+        </button>
+        <button mat-icon-button [matMenuTriggerFor]="Moremenu">
+            <mat-icon mat-list-icon>more_vert</mat-icon>
+            <mat-menu #Moremenu="matMenu" class="moreOption">
+                <button mat-menu-item >More</button>
+                <mat-menu #addlabel="matMenu" class="moreOption">
+                    <button mat-menu-item>Delete Note</button>
+                    <button mat-menu-item>Add Label</button>
+                    <button mat-menu-item>Add Drawing</button>
+                    <button mat-menu-item>Make a copy</button>
+                    <button mat-menu-item>Show checkboxes</button>
+                    <button mat-menu-item>Copy to google docs</button>
+                </mat-menu>
+            </mat-menu>
+        </button>
+        <button mat-icon-button>
+            <mat-icon mat-list-icon>redo</mat-icon>
+        </button>
+        <button mat-icon-button>
+            <mat-icon mat-list-icon>undo</mat-icon>
+        </button>
+    </div>
+    <div class="button">
+        <button mat-button style="color: #1A73E8;" >Close</button>
+    </div>
+</div>

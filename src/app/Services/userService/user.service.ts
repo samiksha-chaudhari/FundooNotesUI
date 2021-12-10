@@ -50,5 +50,6 @@ export class UserService {
   // reset(payload:any) {
   //   return this.http.Post(this.baseUrl+"resetpassword",payload,true)
   // }
+  
 
 }

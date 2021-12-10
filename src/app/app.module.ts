@@ -22,6 +22,13 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatListModule} from '@angular/material/list';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatCardModule} from '@angular/material/card';
+import { CreateNoteComponent } from './Components/create-note/create-note.component';
+import { IconComponent } from './Components/icon/icon.component';
+import { GetAllNoteComponent } from './Components/get-all-note/get-all-note.component';
+import { TrashComponent } from './Components/trash/trash.component';
+import { DisplyNotesComponent } from './Components/disply-notes/disply-notes.component';
+import { ArchiveComponent } from './Components/archive/archive.component';
+import { AuthguardServiceService } from './Services/AuthguardService/authguard-service.service';
 
 @NgModule({
   declarations: [
@@ -30,7 +37,13 @@ import {MatCardModule} from '@angular/material/card';
     LoginComponent,
     ForgetPasswordComponent,
     ForgetEmailComponent,
-    DashboardComponent
+    DashboardComponent,
+    CreateNoteComponent,
+    IconComponent,
+    GetAllNoteComponent,
+    TrashComponent,
+    DisplyNotesComponent,
+    ArchiveComponent
   ],
   imports: [
     BrowserModule,
@@ -52,7 +65,9 @@ import {MatCardModule} from '@angular/material/card';
     MatMenuModule,
     MatCardModule
   ],
-  providers: [],
+  providers: [
+    AuthguardServiceService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
