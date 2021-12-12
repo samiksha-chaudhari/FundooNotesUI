@@ -15,4 +15,8 @@ export class HttpService {
     return this.http.post(this.baseUrl+url,payload,token && header)
   }
 
+  Get(url = '', token: boolean = false, header: any = null) {
+    return this.http.get(this.baseUrl + url,token && header)
+  }
+
 }

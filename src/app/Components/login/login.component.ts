@@ -46,7 +46,8 @@ export class LoginComponent implements OnInit {
       }
       console.log(payload);
       this.user.login(payload).subscribe(
-        (next) => {
+        (next:any) => {
+          localStorage.setItem('token',next.id),
           console.log(next),
           this.snackBar.open("login successful"," ",{
             duration:1000

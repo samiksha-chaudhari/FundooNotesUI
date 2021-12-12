@@ -9,18 +9,19 @@ import { GetAllNoteComponent } from './Components/get-all-note/get-all-note.comp
 import { IconComponent } from './Components/icon/icon.component';
 import { LoginComponent } from './Components/login/login.component';
 import { RegistrationComponent } from './Components/registration/registration.component';
+import { AuthguardGuard } from './Authguard/authguard.guard';
 
 const routes: Routes = [
   {path:'register',component:RegistrationComponent},
   {path:'login',component:LoginComponent},
   {path:'forgetpassword',component:ForgetPasswordComponent},
   {path:'forgetemail',component:ForgetEmailComponent},
-  {path:'home',component:DashboardComponent,
+  {path:'home',component:DashboardComponent,canActivate:[AuthguardGuard],
    children:[
     {path:'',redirectTo:"notes",pathMatch:'full'},
     {path:'notes',component:GetAllNoteComponent},
-    {path:'display',component:DisplyNotesComponent}
-    // {path:'icon',component:IconComponent}
+    {path:'display',component:DisplyNotesComponent},
+    {path:'icon',component:IconComponent}
    ]
   },
   {path:'create',component:CreateNoteComponent},

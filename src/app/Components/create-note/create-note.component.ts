@@ -12,8 +12,8 @@ export class CreateNoteComponent implements OnInit {
   hide=true;
   NoteForm !:FormGroup;
   submitted = false;
-  Title='';
-  Description='';
+  title='';
+  description='';
   userID='';
 
 
@@ -22,9 +22,8 @@ export class CreateNoteComponent implements OnInit {
   ngOnInit(): void {
 
     this.NoteForm = this.formBuilder.group({
-      Title: [''],
-      Description:[''],
-      userID:[''],
+      title: [''],
+      description:[''],
       service:['advance']
     });
   }
@@ -33,13 +32,13 @@ export class CreateNoteComponent implements OnInit {
 
   onClose() {
     this.submitted = true;
+    this.hide=true;
 
     // stop here if form is valid
-    if (this.Title != null && this.Description != null) {
+    if (this.NoteForm.valid) {
       let payload={
-        title:this.NoteForm.value.Title,
-        description:this.NoteForm.value.Description,
-        id:this.NoteForm.value.userID    
+        title:this.NoteForm.value.title,
+        description:this.NoteForm.value.description
       }
       console.log(payload);
       this.notes.create(payload).subscribe(
@@ -58,11 +57,6 @@ export class CreateNoteComponent implements OnInit {
       this.snackBar.open("not created"," ",{
         duration:1000
       });
-    }
-   
+    }   
   }
-
-
-
-
  }

@@ -1,14 +1,20 @@
-<div fxLayout="center center">                     
-       <mat-card class="example-card">
-       <mat-card-title>Notes <title></title></mat-card-title>
-       <mat-card-content >      
-       </mat-card-content>  
-       <div>
-              <app-icon></app-icon>
-              <div class="button">
-                     <button mat-button style="color: #1A73E8;" >Close</button>
-              </div>
-       </div>  
-       </mat-card>
-</div>
+<div style="margin-left: 200px; margin-top: 50px;" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="20px">
+    <mat-card class="card" *ngFor='let note of notesArray'>
+       <div class="textArea">
+          <textarea style="overflow: hidden" matInput cdkTextareaAutosize> {{note.title}}</textarea>
+       </div>
+       <div class="textArea" style="padding-top: 20px">
+       <textarea style="overflow: hidden" matInput cdkTextareaAutosize>{{note.description}}</textarea>  
+       </div>
 
+       <div fxLayout="row" style ="margin-top: 40px;">
+            <div fxFlex="50">
+            <app-icon></app-icon>
+            </div>
+            <div >
+                <button mat-icon-button style="margin-left: 100px;">Close</button>
+            </div>
+       </div>
+       
+    </mat-card>
+ </div>

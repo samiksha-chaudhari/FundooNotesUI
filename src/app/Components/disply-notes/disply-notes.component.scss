@@ -1,3 +1,43 @@
-.example-card {
-    max-width: 400px;
+.card {
+  display       : flex;
+  flex-direction: column;
+  height        : fit-content;
+  width         : 250px;
+  min-height    : 125px;
+  max-height    : 750px;
+  padding       : 16px 16px 8px;
+  border        : 1px solid transparent;
+  border-radius : 9px;
+  border-width  : 1px;
+  margin-bottom : 25px;
+}
+
+.textArea {
+  word-wrap    : break-word;
+  overflow     : hidden;
+  text-overflow: ellipsis;
+}
+
+::ng-deep {
+  .mat-icon-button:hover {
+     background-color: #0000001f;
   }
+}
+
+
+.card .icon {
+  visibility: hidden;
+}
+
+.card:hover .icon {
+  visibility: visible;
+}
+
+::ng-deep {
+  .dialog-container-custom .mat-dialog-container {
+     padding-left  : 20px !important;
+     padding-right : 20px !important;
+     padding-bottom: 5px !important;
+     border-radius : 12px !important;
+  }
+}
