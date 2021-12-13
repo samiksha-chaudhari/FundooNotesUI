@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component,Input, OnInit,} from '@angular/core';
 
 @Component({
   selector: 'app-disply-notes',
@@ -6,11 +6,10 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
   styleUrls: ['./disply-notes.component.scss']
 })
 export class DisplyNotesComponent implements OnInit {
-  @Input() notesArray: any;
+  @Input() Array: any;
 
   constructor() { }
-  @Output() noteUpdated = new EventEmitter<any>();
-
+  
   ngOnInit(): void {
   }
    

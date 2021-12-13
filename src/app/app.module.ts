@@ -29,6 +29,7 @@ import { TrashComponent } from './Components/trash/trash.component';
 import { DisplyNotesComponent } from './Components/disply-notes/disply-notes.component';
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { AuthguardServiceService } from './Services/AuthguardService/authguard-service.service';
+import { UpdateComponent } from './Components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { AuthguardServiceService } from './Services/AuthguardService/authguard-s
     GetAllNoteComponent,
     TrashComponent,
     DisplyNotesComponent,
-    ArchiveComponent
+    ArchiveComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

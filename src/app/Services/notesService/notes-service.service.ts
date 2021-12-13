@@ -35,6 +35,29 @@ export class NotesServiceService {
     }
     return this.http.Get('/notes/getNotesList',true ,header);
   }
+  update(data :any){
+    console.log("note service");
+
+    let header = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })
+      
+      }
+      return this.http.Post('/notes/updateNotes',data,  true, header)
+
+  }
+
+  Color(data: any) {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    };
+    return this.http.Post('/notes/changesColorNotes', data, true, header);
+  }
 
   // display(payload: any) {
   //   let header = {

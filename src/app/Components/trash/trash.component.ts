@@ -6,6 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
+  Array : any = [];
+
 
   constructor() { }
 
