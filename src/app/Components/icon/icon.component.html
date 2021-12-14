@@ -1,45 +1,42 @@
-<div class="footericons">
-    <div class="icon">
+<div class="icon">
+    <div class="icons">
         <button mat-icon-button>
-            <mat-icon mat-list-icon>add_alert</mat-icon>
+            <mat-icon mat-list-icon [matMenuTriggerFor]="reminderMenu">add_alert
+            </mat-icon>
+            <mat-menu #reminderMenu="matMenu" class="reminderBox">
+                <button mat-menu-item [disabled]="true">Reminder</button>
+                <button mat-menu-item *ngFor="let rem of reminders;let i=index">
+                    <span>{{rem.Text}}</span>
+                    <span style="color:#9DBDE1">{{rem.Time}}</span>
+                </button>
+            </mat-menu>
         </button>
         <button mat-icon-button>
             <mat-icon mat-list-icon>person_add</mat-icon>
         </button>
-        <button mat-icon-button>
-            <mat-icon mat-list-icon >color_lens</mat-icon>
+        <button mat-icon-button [matMenuTriggerFor]="colorPallete">
+            <mat-icon mat-list-icon>color_lens</mat-icon>
         </button>
         <button mat-icon-button>
             <mat-icon mat-list-icon>image</mat-icon>
         </button>
-        <button mat-icon-button>
-            <mat-icon mat-list-icon>archive</mat-icon>
+        <button mat-icon-button (click)="archiveNote()">
+            <mat-icon mat-list-icon *ngIf="!archive">archive</mat-icon>
+            <mat-icon mat-list-icon style="color:#767676 ;" *ngIf="archive">archive</mat-icon>
         </button>
-
-        <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
-          </button>
-          <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-              <span>Delete Note</span>
-            </button>
-            <button mat-menu-item>
-              <span>Add Label</span>
-            </button>
-          </mat-menu>
-        <!-- <button mat-icon-button [matMenuTriggerFor]="Moremenu">
+        <button mat-icon-button [matMenuTriggerFor]="Moremenu">
             <mat-icon mat-list-icon>more_vert</mat-icon>
             <mat-menu #Moremenu="matMenu" class="moreOption">
-                <button mat-menu-item >More</button>
-                <mat-menu #addlabel="matMenu" class="moreOption">
-                    <button mat-menu-item>Delete Note</button>
-                    <button mat-menu-item>Add Label</button>
-                    <button mat-menu-item>Add Drawing</button>
-                    <button mat-menu-item>Make a copy</button>
-                    <button mat-menu-item>Show checkboxes</button>
-                    <button mat-menu-item>Copy to google docs</button>
-                </mat-menu>
+                <button mat-menu-item>add Label</button>
+                <button mat-menu-item (click)="DeleteNote()">Delete Note</button>
             </mat-menu>
-        </button> -->
+        </button>
     </div>
 </div>
+<mat-menu #colorPallete="matMenu" yPosition="above">
+    <div class="colorbox" *ngFor="let color of colors;let i=index">
+        <span class="colors" (click)="ChangeColor(colors[i].color)" [style.background-color]="colors[i].color" >
+            <mat-icon mat-list-icon *ngIf="colors[i].icon">done</mat-icon>
+        </span>
+    </div>
+</mat-menu>

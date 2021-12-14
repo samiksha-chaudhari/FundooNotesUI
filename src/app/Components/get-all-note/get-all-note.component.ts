@@ -23,6 +23,10 @@ export class GetAllNoteComponent implements OnInit {
 
       this.noteList = responce.data.data;
       this.noteList.reverse();
+      this.noteList = this.noteList.filter((notedata: any) => {
+        return notedata.isDeleted === false && notedata.isArchived === false;
+
+      })
     }, 
     error => {
       console.log(error);

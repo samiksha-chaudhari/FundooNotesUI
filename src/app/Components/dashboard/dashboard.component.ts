@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Route, Router } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -14,6 +14,14 @@ export class DashboardComponent implements OnInit {
   }
   notes() {
     this.router.navigateByUrl('/home/notes');
+  };
+
+  archive() {
+    this.router.navigateByUrl('/home/archive');
+  };
+  
+  trash() {
+    this.router.navigateByUrl('/home/trash');
   };
 
 }

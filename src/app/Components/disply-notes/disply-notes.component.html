@@ -1,15 +1,15 @@
 <div style="margin-left: 200px; margin-top: 50px;" fxLayout="row wrap" fxLayoutAlign="start center" fxLayoutGap="20px">
-    <mat-card class="card" *ngFor='let note of Array'>
-       <div class="textArea">
-          <textarea style="overflow: hidden" matInput cdkTextareaAutosize> {{note.title}}</textarea>
+    <mat-card class="card" *ngFor='let note of Array' [style.background-color]=note.color>
+       <div class="textArea" (click)="openDialog(note)">
+          <textarea style="overflow: hidden"  matInput cdkTextareaAutosize> {{note.title}}</textarea>
        </div>
-       <div class="textArea" style="padding-top: 20px">
-       <textarea style="overflow: hidden" matInput cdkTextareaAutosize>{{note.description}}</textarea>  
+       <div class="textArea" (click)="openDialog(note)" style="padding-top: 20px">
+       <textarea style="overflow: hidden"  matInput cdkTextareaAutosize>{{note.description}}</textarea>  
        </div>
 
        <div fxLayout="row" style ="margin-top: 40px;">
             <div fxFlex="50">
-            <app-icon></app-icon>
+            <app-icon [noteCard]="note"></app-icon>
             </div>
        </div>
        

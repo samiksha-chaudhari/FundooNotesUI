@@ -50,6 +50,7 @@ export class NotesServiceService {
   }
 
   Color(data: any) {
+    console.log("color service",data);
     let header = {
       headers: new HttpHeaders({
         'Content-Type': 'application/json',
@@ -58,6 +59,66 @@ export class NotesServiceService {
     };
     return this.http.Post('/notes/changesColorNotes', data, true, header);
   }
+
+  delete(data:any){
+    let header = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })
+      
+      }
+      return this.http.Post('/notes/trashNotes', data, true, header)
+  }
+
+  getDelete(){
+    console.log("Data is in notes service");
+    let header = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': this.token
+      })
+    }
+    return this.http.Get('/notes/getTrashNotesList', true, header)
+  }
+
+  archive(data:any){
+    let header = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })
+      
+      }
+      return this.http.Post('/notes/archiveNotes', data, true, header)
+  }
+
+  getArchive() {
+    let header = {
+      headers: new HttpHeaders({
+        'Content-type': 'application/json',
+        'Authorization': this.token
+      })
+
+    }
+    return this.http.Get('/notes/getArchiveNotesList', true, header)
+  }
+  
+
+
+
+  deleteforever(data:any){
+    let header = {
+      headers: new HttpHeaders({
+      'Content-type': 'application/json',
+      'Authorization': this.token
+      })
+      
+      }
+      return this.http.Post('/notes/deleteForeverNotes', data, true, header)
+  }
+
+
 
   // display(payload: any) {
   //   let header = {

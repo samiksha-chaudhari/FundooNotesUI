@@ -30,6 +30,7 @@ import { DisplyNotesComponent } from './Components/disply-notes/disply-notes.com
 import { ArchiveComponent } from './Components/archive/archive.component';
 import { AuthguardServiceService } from './Services/AuthguardService/authguard-service.service';
 import { UpdateComponent } from './Components/update/update.component';
+import {MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -65,7 +66,8 @@ import { UpdateComponent } from './Components/update/update.component';
     MatToolbarModule,
     MatListModule,
     MatMenuModule,
-    MatCardModule
+    MatCardModule,
+    MatDialogModule
   ],
   providers: [
     AuthguardServiceService

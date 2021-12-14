@@ -1,4 +1,6 @@
-import { Component,Input, OnInit,} from '@angular/core';
+import { Component,EventEmitter,Input, OnInit, Output,} from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { UpdateComponent } from '../update/update.component';
 
 @Component({
   selector: 'app-disply-notes',
@@ -6,12 +8,47 @@ import { Component,Input, OnInit,} from '@angular/core';
   styleUrls: ['./disply-notes.component.scss']
 })
 export class DisplyNotesComponent implements OnInit {
-  @Input() Array: any;
-
-  constructor() { }
+  //constructor(){} 
+  constructor(private dialog:MatDialog) { }
   
+  @Input() Array: any;
+  @Output() noteUpdated = new EventEmitter<any>();
+
   ngOnInit(): void {
   }
+
+
+  openDialog(note: any) {
+    const dialogRef = this.dialog.open(UpdateComponent, {
+      panelClass: 'dialog-container-custom',
+      width: "600px",
+      data: note
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log(`Dialog result: ${result}`);
+      this.noteUpdated.emit(result);
+    });
+  }
+
+  // operation(value: any) {
+  //   this.noteUpdated.emit(value);
+  // }
+
+  // openDialog(note: any) {
+  //   const dialogRef = this.dialog.open(UpdateComponent,{
+  //   width: "600px",
+  //   data: note,
+    
+  //   });
+    
+    
+  //   dialogRef.afterClosed().subscribe(result => {
+  //   //this.displaytogetallnotes.emit(this.sentmsg)
+  //   console.log(`Dialog result: ${result}`);
+    
+  //   });
+  // }
    
 
 }

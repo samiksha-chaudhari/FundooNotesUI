@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesServiceService } from 'src/app/Services/notesService/notes-service.service';
 
 @Component({
@@ -7,11 +8,20 @@ import { NotesServiceService } from 'src/app/Services/notesService/notes-service
   styleUrls: ['./icon.component.scss']
 })
 export class IconComponent implements OnInit {
-  
+  archive=false;
+  hide=true;
+  Reminder:any;
+  note:any;
+   
+  @Output() iconToDisplay = new EventEmitter<string>();
+  @Input() noteCard:any;
 
-  constructor(private note:NotesServiceService) { }
+  // colors = ['#F28B82', '#FBBC05', '#FFF475', '#CCFF90', '#A7FFEB', '#CBF0F8', '#AECBFA', '#D7AEFB', '#FDCFE8', '#E6C9A8', '#E8EAED'];
 
+  constructor(private Note:NotesServiceService,private snackBar:MatSnackBar) { }
+ 
   ngOnInit(): void {
+
   }
   colors: any[] = [
     {
@@ -75,6 +85,94 @@ export class IconComponent implements OnInit {
     }
   ];
 
+  reminders: any[] = [
+  {
+    "Text": "Later Today",
+    "Time":"8:00 PM"
+  },
+  {
+    "Text": "Tommorow",
+    "Time":"8:00 AM"
+  },
+  {
+    "Text": "Next Week",
+    "Time":"8:00 AM"
+  }
+];
+
+  archiveNote(){
+    let payload = {
+      noteIdList: [this.noteCard.id],
+      isArchived: true,
+    }
+    this.Note.archive(payload).subscribe((response:any)=>{
+      this.iconToDisplay.emit(response)
+      console.log((response.data));
+      this.snackBar.open('Note archive ', '', {
+        duration: 1000,
+      })
+    })
+  }
+
+  DeleteNote(){
+    console.log(this.noteCard);
+
+    let deleteData = {
+      noteIdList: [this.noteCard.id],
+      isDeleted: true
+    }
+    console.log("deleted data", deleteData);
+
+    this.Note.delete(deleteData).subscribe((response: any) => {
+      console.log(response);
+      this.iconToDisplay.emit(response);
+      this.snackBar.open('Note deleted Successful', '', {
+        duration: 1000,
+      })
+    }, error => {
+      console.log(error);
+      this.snackBar.open('Note not delete', '', {
+        duration: 1000,
+      })
+    }
+    )
+  }
   
 
+  ChangeColor(color:any)
+  {
+    console.log( "for colour change ", this.noteCard,color);
+    let payload = {
+      noteIdList: [this.noteCard.id],
+      color: color
+    }    
+    this.Note.Color(payload).subscribe((response: any) => {
+      console.log(response.data);
+      this.iconToDisplay.emit(response);
+
+    })    
+  }
+
+  // ChangeColor(color: any) {
+  //   console.log('color', color);
+  //   console.log(this.noteCard);
+    
+  //   this.noteCard.color = color;
+  //   console.log('color', color);
+  //   let data = {
+  //   color: color,
+  //   noteIdList: [this.noteCard.id],
+  //   }
+  //   console.log(data);
+  //   this.Note.Color(data).subscribe(
+  //   (response: any) => {
+    
+  //   console.log('Response of setColour', response);
+  //   //this.iconstodisplay.emit(color)
+  //   },
+  //   (error: any) => {
+  //   console.log('archive Error at icons methods', error);
+    
+  //   }
+  //   );}
 }

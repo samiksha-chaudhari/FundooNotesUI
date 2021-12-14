@@ -1,1 +1,14 @@
-<p>update works!</p>
+<div class="textArea-title">
+    <input matInput [(ngModel)]="title">
+ </div>
+ <div class="textArea-message">
+    <textarea matInput cdkTextareaAutosize [(ngModel)]="description"></textarea>
+ </div>
+ <div fxLayout="row" fxLayoutAlign="space-between end">
+    <div fxFlex="70">
+       <app-icon></app-icon>
+    </div>
+    <div>
+        <button mat-icon-button (click)="onClose()">Close</button>
+   </div>
+ </div>
