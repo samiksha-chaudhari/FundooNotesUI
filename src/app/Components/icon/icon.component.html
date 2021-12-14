@@ -34,8 +34,8 @@
     </div>
 </div>
 <mat-menu #colorPallete="matMenu" yPosition="above">
-    <div class="colorbox" *ngFor="let color of colors;let i=index">
-        <span class="colors" (click)="ChangeColor(colors[i].color)" [style.background-color]="colors[i].color" >
+    <div class="colorbox">
+        <span class="colors" (click)="ChangeColor(colors[i].color)" [style.background-color]="colors[i].color" *ngFor="let color of colors;let i=index">
             <mat-icon mat-list-icon *ngIf="colors[i].icon">done</mat-icon>
         </span>
     </div>

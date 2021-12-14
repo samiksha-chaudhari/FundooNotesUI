@@ -16,12 +16,9 @@ export class IconComponent implements OnInit {
   @Output() iconToDisplay = new EventEmitter<string>();
   @Input() noteCard:any;
 
-  // colors = ['#F28B82', '#FBBC05', '#FFF475', '#CCFF90', '#A7FFEB', '#CBF0F8', '#AECBFA', '#D7AEFB', '#FDCFE8', '#E6C9A8', '#E8EAED'];
-
   constructor(private Note:NotesServiceService,private snackBar:MatSnackBar) { }
  
   ngOnInit(): void {
-
   }
   colors: any[] = [
     {
@@ -138,7 +135,6 @@ export class IconComponent implements OnInit {
     )
   }
   
-
   ChangeColor(color:any)
   {
     console.log( "for colour change ", this.noteCard,color);
@@ -152,27 +148,4 @@ export class IconComponent implements OnInit {
 
     })    
   }
-
-  // ChangeColor(color: any) {
-  //   console.log('color', color);
-  //   console.log(this.noteCard);
-    
-  //   this.noteCard.color = color;
-  //   console.log('color', color);
-  //   let data = {
-  //   color: color,
-  //   noteIdList: [this.noteCard.id],
-  //   }
-  //   console.log(data);
-  //   this.Note.Color(data).subscribe(
-  //   (response: any) => {
-    
-  //   console.log('Response of setColour', response);
-  //   //this.iconstodisplay.emit(color)
-  //   },
-  //   (error: any) => {
-  //   console.log('archive Error at icons methods', error);
-    
-  //   }
-  //   );}
 }

@@ -17,38 +17,15 @@ export class DisplyNotesComponent implements OnInit {
   ngOnInit(): void {
   }
 
-
   openDialog(note: any) {
     const dialogRef = this.dialog.open(UpdateComponent, {
       panelClass: 'dialog-container-custom',
       width: "600px",
       data: note
     });
-
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
       this.noteUpdated.emit(result);
     });
   }
-
-  // operation(value: any) {
-  //   this.noteUpdated.emit(value);
-  // }
-
-  // openDialog(note: any) {
-  //   const dialogRef = this.dialog.open(UpdateComponent,{
-  //   width: "600px",
-  //   data: note,
-    
-  //   });
-    
-    
-  //   dialogRef.afterClosed().subscribe(result => {
-  //   //this.displaytogetallnotes.emit(this.sentmsg)
-  //   console.log(`Dialog result: ${result}`);
-    
-  //   });
-  // }
-   
-
 }
