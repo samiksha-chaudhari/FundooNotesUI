@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
   get f() { return this.loginForm.controls; }
 
   showpassword()
-{ this.hide = !this.hide}
+  { this.hide = !this.hide}
 
   onSubmit() {
     this.submitted = true;
