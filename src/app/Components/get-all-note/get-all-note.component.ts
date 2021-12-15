@@ -37,5 +37,9 @@ export class GetAllNoteComponent implements OnInit {
   receivemessageToGetdisplay($event:any){    
     this.getAllNotes();
   }
+   
+  receiveMessage($event:any){
+    this.getAllNotes();
+  }
 
 }

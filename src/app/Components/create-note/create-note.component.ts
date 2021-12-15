@@ -16,10 +16,10 @@ export class CreateNoteComponent implements OnInit {
   description='';
   userID='';
 
-  @Output() messageIconToDisplay = new EventEmitter<string>();
+  
 
   constructor(private formBuilder: FormBuilder, private notes:NotesServiceService, private snackBar:MatSnackBar) { }
-
+  @Output() messageEvent = new EventEmitter<string>();
   ngOnInit(): void {
 
     this.NoteForm = this.formBuilder.group({
@@ -43,10 +43,9 @@ export class CreateNoteComponent implements OnInit {
       }
       console.log(payload);
       
-      this.notes.create(payload).subscribe(
-        (next) => {
+      this.notes.create(payload).subscribe((next:any) => {
           console.log(next);
-          //this.messageIconToDisplay.emit(next);
+         this.messageEvent.emit(next)
           this.snackBar.open("note created"," ",{
             duration:1000
           });
