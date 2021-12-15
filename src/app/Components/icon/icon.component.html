@@ -34,11 +34,11 @@
     </div>
 </div>
 <div *ngIf="isTrashComponent"  fxLayout="row" >
-    <button matTooltip="Delete forever" (click)="deleteForever()">
+    <button mat-icon-button matTooltip="Delete forever" (click)="deleteForever()">
         <mat-icon>delete_forever</mat-icon>
     </button>
 
-    <button matTooltip="Restore" (click)="restore()">
+    <button mat-icon-button style="margin-left: 20px;" matTooltip="Restore" (click)="restore()">
         <mat-icon>restore_from_trash</mat-icon>
     </button>
 </div>
