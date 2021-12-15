@@ -1,2 +1,2 @@
 <app-create-note></app-create-note>
-<app-disply-notes [Array]="noteList"></app-disply-notes>
+<app-disply-notes [Array]="noteList" (messageToGetdisplay)="receivemessageToGetdisplay($event)"></app-disply-notes>

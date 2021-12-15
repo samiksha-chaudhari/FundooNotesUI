@@ -10,9 +10,10 @@ import { UpdateComponent } from '../update/update.component';
 export class DisplyNotesComponent implements OnInit {
   //constructor(){} 
   constructor(private dialog:MatDialog) { }
+  msg:any;
   
   @Input() Array: any;
-  @Output() noteUpdated = new EventEmitter<any>();
+  @Output() messageToGetdisplay = new EventEmitter<any>();
 
   ngOnInit(): void {
   }
@@ -25,7 +26,14 @@ export class DisplyNotesComponent implements OnInit {
     });
     dialogRef.afterClosed().subscribe(result => {
       console.log(`Dialog result: ${result}`);
-      this.noteUpdated.emit(result);
+      this.messageToGetdisplay.emit(result);
     });
+  }
+  receivemessageiconToDisplay($event:any){
+    console.log("event from icon to display",$event)
+    this.msg= $event;
+    console.log("msg",this.msg);
+    
+    this.messageToGetdisplay.emit(this.msg)
   }
 }

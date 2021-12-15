@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { NotesServiceService } from 'src/app/Services/notesService/notes-service.service';
 
 @Component({
@@ -9,8 +9,7 @@ import { NotesServiceService } from 'src/app/Services/notesService/notes-service
 export class TrashComponent implements OnInit {
 notesArray : any = [];
 
-
-  constructor(private note:NotesServiceService) { }
+constructor(private note:NotesServiceService) { }
 
   ngOnInit(): void {
     this.getTrash();
@@ -26,4 +25,9 @@ notesArray : any = [];
       console.log('trashlist',this.notesArray);
     })
   }
-}
+  receivemessageToGetdisplay($event:any){
+    console.log("event from icon to display",$event)
+    
+    this.getTrash();
+  }
+} 

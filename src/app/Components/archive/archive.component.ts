@@ -26,5 +26,10 @@ export class ArchiveComponent implements OnInit {
       console.log(error);
     })
   }
+  receivemessageToGetdisplay($event:any){
+    console.log("event from icon to display",$event)
+    
+    this.getArchive();
+  }
 
 }

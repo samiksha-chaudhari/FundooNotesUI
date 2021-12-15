@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataServiceService } from 'src/app/Services/DataService/data-service.service';
 import { NotesServiceService } from 'src/app/Services/notesService/notes-service.service';
 
 @Component({
@@ -32,6 +33,9 @@ export class GetAllNoteComponent implements OnInit {
       console.log(error);
     }
     )
+  }
+  receivemessageToGetdisplay($event:any){    
+    this.getAllNotes();
   }
 
 }

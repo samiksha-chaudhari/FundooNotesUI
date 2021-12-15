@@ -1,4 +1,4 @@
-<div class="icon">
+<div class="icon" *ngIf="!isTrashComponent">
     <div class="icons">
         <button mat-icon-button>
             <mat-icon mat-list-icon [matMenuTriggerFor]="reminderMenu">add_alert
@@ -20,9 +20,9 @@
         <button mat-icon-button>
             <mat-icon mat-list-icon>image</mat-icon>
         </button>
-        <button mat-icon-button (click)="archiveNote()">
-            <mat-icon mat-list-icon *ngIf="!archive">archive</mat-icon>
-            <mat-icon mat-list-icon style="color:#767676 ;" *ngIf="archive">archive</mat-icon>
+        <button mat-icon-button >
+            <mat-icon mat-list-icon *ngIf="!isArchive" (click)="archiveNote()">archive</mat-icon>
+            <mat-icon mat-list-icon style="color:#767676 ;" *ngIf="isArchive" (click)="unArchive()">archive</mat-icon>
         </button>
         <button mat-icon-button [matMenuTriggerFor]="Moremenu">
             <mat-icon mat-list-icon>more_vert</mat-icon>
@@ -33,9 +33,18 @@
         </button>
     </div>
 </div>
+<div *ngIf="isTrashComponent"  fxLayout="row" >
+    <button matTooltip="Delete forever" (click)="deleteForever()">
+        <mat-icon>delete_forever</mat-icon>
+    </button>
+
+    <button matTooltip="Restore" (click)="restore()">
+        <mat-icon>restore_from_trash</mat-icon>
+    </button>
+</div>
 <mat-menu #colorPallete="matMenu" yPosition="above">
-    <div class="colorbox">
-        <span class="colors" (click)="ChangeColor(colors[i].color)" [style.background-color]="colors[i].color" *ngFor="let color of colors;let i=index">
+    <div class="colorbox" *ngFor="let color of colors;let i=index">
+        <span class="colors" (click)="ChangeColor(colors[i].color)" [style.background-color]="colors[i].color" >
             <mat-icon mat-list-icon *ngIf="colors[i].icon">done</mat-icon>
         </span>
     </div>

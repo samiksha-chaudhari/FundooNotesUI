@@ -104,9 +104,6 @@ export class NotesServiceService {
     return this.http.Get('/notes/getArchiveNotesList', true, header)
   }
   
-
-
-
   deleteforever(data:any){
     let header = {
       headers: new HttpHeaders({
@@ -119,16 +116,4 @@ export class NotesServiceService {
   }
 
 
-
-  // display(payload: any) {
-  //   let header = {
-  //     headers: new HttpHeaders({
-  //       "Content-Type": "application/json",
-  //       'Authorization': this.token
-  //     })
-  //   }
-  //   console.log(header);
-  //   return this.http.Post("/notes/addNotes", payload, true, header)
-
-  // }
 }

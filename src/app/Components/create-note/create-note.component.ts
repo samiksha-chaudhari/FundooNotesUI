@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { NotesServiceService } from 'src/app/Services/notesService/notes-service.service';
@@ -15,6 +15,8 @@ export class CreateNoteComponent implements OnInit {
   title='';
   description='';
   userID='';
+
+  @Output() messageIconToDisplay = new EventEmitter<string>();
 
   constructor(private formBuilder: FormBuilder, private notes:NotesServiceService, private snackBar:MatSnackBar) { }
 
@@ -40,9 +42,11 @@ export class CreateNoteComponent implements OnInit {
         description:this.NoteForm.value.description
       }
       console.log(payload);
+      
       this.notes.create(payload).subscribe(
         (next) => {
-          console.log(next),
+          console.log(next);
+          //this.messageIconToDisplay.emit(next);
           this.snackBar.open("note created"," ",{
             duration:1000
           });

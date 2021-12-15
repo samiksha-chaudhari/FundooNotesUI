@@ -9,9 +9,9 @@
 
        <div fxLayout="row" style ="margin-top: 40px;">
             <div fxFlex="50">
-            <app-icon [noteCard]="note"></app-icon>
+            <app-icon [noteCard]="note" (messageIconToDisplay)="receivemessageiconToDisplay($event)"></app-icon>
             </div>
        </div>
-       
+
     </mat-card>
  </div>
