@@ -7,7 +7,7 @@ import { NotesServiceService } from 'src/app/Services/notesService/notes-service
   styleUrls: ['./trash.component.scss']
 })
 export class TrashComponent implements OnInit {
-  notesArray : any = [];
+notesArray : any = [];
 
 
   constructor(private note:NotesServiceService) { }

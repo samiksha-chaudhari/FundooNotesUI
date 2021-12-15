@@ -113,25 +113,19 @@ export class IconComponent implements OnInit {
 
   DeleteNote(){
     console.log(this.noteCard);
-
     let deleteData = {
       noteIdList: [this.noteCard.id],
       isDeleted: true
     }
-    console.log("deleted data", deleteData);
+    console.log(deleteData);
 
     this.Note.delete(deleteData).subscribe((response: any) => {
       console.log(response);
       this.iconToDisplay.emit(response);
-      this.snackBar.open('Note deleted Successful', '', {
+      this.snackBar.open('Note deleted', '', {
         duration: 1000,
       })
-    }, error => {
-      console.log(error);
-      this.snackBar.open('Note not delete', '', {
-        duration: 1000,
-      })
-    }
+    },
     )
   }
   

@@ -16,7 +16,6 @@ export class CreateNoteComponent implements OnInit {
   description='';
   userID='';
 
-
   constructor(private formBuilder: FormBuilder, private notes:NotesServiceService, private snackBar:MatSnackBar) { }
 
   ngOnInit(): void {

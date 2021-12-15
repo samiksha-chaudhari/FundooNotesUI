@@ -59,19 +59,18 @@
 }    
 
 textarea{
-        border: unset;
-        font-size: 17px;
-        //color: #4F4F4F;
-        width: 100%;
+    border: unset;
+    font-size: 17px;
+    width: 100%;
 }
 
 textarea:focus { 
-        outline: none !important;
-        border-color: white;
+    outline: none !important;
+    border-color: white;
 }
 
 mat-icon{
-         color: #757575;
+    color: #757575;
 }
 
 
@@ -82,7 +81,7 @@ mat-icon{
     
 .mat-card:not([class*=mat-elevation-z]){
 
-        box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
 }
 .label{
     display: flex;
