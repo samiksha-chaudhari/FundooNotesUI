@@ -24,14 +24,14 @@ export class IconComponent implements OnInit {
   constructor(private Note:NotesServiceService,private snackBar:MatSnackBar,private route:ActivatedRoute) { }
  
   ngOnInit(): void {
-    let com = this.route.snapshot.component;
+    let component = this.route.snapshot.component;
 
-    if (com == TrashComponent) {
+    if (component == TrashComponent) {
       this.isTrashComponent = true;
       console.log(this.isTrashComponent);
     }
 
-    if (com == ArchiveComponent) {
+    if (component == ArchiveComponent) {
       this.isArchive = true;
       console.log(this.isArchive);
     }

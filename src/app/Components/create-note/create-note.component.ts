@@ -15,9 +15,7 @@ export class CreateNoteComponent implements OnInit {
   title='';
   description='';
   userID='';
-  noteColor = "";
-
-  
+  noteColor = "";  
 
   constructor(private formBuilder: FormBuilder, private notes:NotesServiceService, private snackBar:MatSnackBar) { }
   @Output() messageEvent = new EventEmitter<string>();
