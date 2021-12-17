@@ -9,10 +9,10 @@
             <mat-icon mat-list-icon>crop_original</mat-icon>
         </mat-card-subtitle>
     </mat-card>
-    <mat-card class="card" *ngIf="hide==false"[formGroup]="NoteForm">
+    <mat-card class="card" *ngIf="hide==false"[formGroup]="NoteForm" [style.background-color]="noteColor">
         <div class="titlerow">
             <mat-card-title class="noteTitle" >
-                <textarea cdkTextareaAutosize placeholder="Title" class="noteTitle" formControlName="title"></textarea>
+                <textarea cdkTextareaAutosize placeholder="Title" class="noteTitle" formControlName="title" [style.background-color]="noteColor"></textarea>
             </mat-card-title>
             <mat-card-subtitle class="icon" >
                 <button mat-icon-button>
@@ -22,7 +22,7 @@
         </div>
         <div class="description" style="padding-top:10px ;">
             <mat-card-title class="description">
-                <textarea cdkTextareaAutosize placeholder="Take a note..." class="notedescription" formControlName="description"></textarea>
+                <textarea cdkTextareaAutosize placeholder="Take a note..." class="notedescription" formControlName="description" [style.background-color]="noteColor"></textarea>
             </mat-card-title>
         </div>
         <div fxLayout="row" fxLayoutAlign="space-between end">

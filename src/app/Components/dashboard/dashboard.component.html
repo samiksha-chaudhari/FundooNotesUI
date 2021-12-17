@@ -10,7 +10,7 @@
     </div>
     <div style="margin-bottom: 5px; margin-top: -5px; border-radius: 10px;">
         <mat-form-field appearance="fill" [style.width.px]=700>
-            <input matInput placeholder="Search">
+            <input matInput placeholder="Search" [(ngModel)]="searchword" (keyup)=" searchtitle($event)" >
             <mat-icon matPrefix >search</mat-icon>
         </mat-form-field>
     </div>

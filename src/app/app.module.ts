@@ -31,6 +31,7 @@ import { ArchiveComponent } from './Components/archive/archive.component';
 import { AuthguardServiceService } from './Services/AuthguardService/authguard-service.service';
 import { UpdateComponent } from './Components/update/update.component';
 import {MatDialogModule} from '@angular/material/dialog';
+import { SearchPipePipe } from './Components/SearchPipe/search-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import {MatDialogModule} from '@angular/material/dialog';
     TrashComponent,
     DisplyNotesComponent,
     ArchiveComponent,
-    UpdateComponent
+    UpdateComponent,
+    SearchPipePipe
   ],
   imports: [
     BrowserModule,

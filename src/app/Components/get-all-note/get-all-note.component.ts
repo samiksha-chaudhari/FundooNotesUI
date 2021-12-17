@@ -10,11 +10,17 @@ import { NotesServiceService } from 'src/app/Services/notesService/notes-service
 export class GetAllNoteComponent implements OnInit {
   token: any;
   noteList: any = [];
+  subscription: any;
+  message: any;
 
-  constructor(private note:NotesServiceService) { }
+  constructor(private note:NotesServiceService,private dataservice:DataServiceService) { }
 
   ngOnInit(): void {
     this.getAllNotes();
+    this.subscription = this.dataservice.currentMessage.subscribe(message => {
+      this.message = message;
+      this.getAllNotes();
+    });
   }
 
   getAllNotes() {

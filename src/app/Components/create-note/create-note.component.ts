@@ -15,6 +15,7 @@ export class CreateNoteComponent implements OnInit {
   title='';
   description='';
   userID='';
+  noteColor = "";
 
   
 

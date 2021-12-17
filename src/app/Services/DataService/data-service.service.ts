@@ -12,4 +12,9 @@ export class DataServiceService {
   changeMessage(message: any) {
     this.messageSource.next(message)
   }
+  private searchData = new BehaviorSubject({type:'',data:[]});
+  searchNote = this.searchData.asObservable();
+  changeData(message: any) {
+    this.searchData.next(message)
+  }
 }

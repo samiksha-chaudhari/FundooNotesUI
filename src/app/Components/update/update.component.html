@@ -1,14 +1,17 @@
-<div class="textArea-title">
-    <input matInput [(ngModel)]="title">
- </div>
- <div class="textArea-message">
-    <textarea matInput cdkTextareaAutosize [(ngModel)]="description"></textarea>
- </div>
- <div fxLayout="row" fxLayoutAlign="space-between end">
-    <div fxFlex="70">
-       <app-icon></app-icon>
-    </div>
-    <div>
-        <button mat-icon-button (click)="onClose()">Close</button>
+<div [style.background-color]=data.color>
+
+   <div class="textArea-title">
+      <input matInput [(ngModel)]="title">
    </div>
- </div>
+   <div class="textArea-message">
+      <textarea matInput cdkTextareaAutosize [(ngModel)]="description"></textarea>
+   </div>
+   <div fxLayout="row" fxLayoutAlign="space-between end">
+      <div fxFlex="70">
+         <app-icon [noteCard]="data" ></app-icon>
+      </div>
+      <div>
+         <button mat-icon-button (click)="onClose()">Close</button>
+      </div>
+   </div>
+</div>

@@ -168,7 +168,8 @@ export class IconComponent implements OnInit {
     }    
     this.Note.Color(payload).subscribe((response: any) => {
       console.log(response.data);
-      this.messageIconToDisplay.emit(response);
+      this.messageIconToDisplay.emit(color);
+
 
     })    
   }
